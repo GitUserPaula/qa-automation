@@ -1,0 +1,63 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.mypy_cache/
+.pytest_cache/
+.dmypy.json
+dmypy.json
+
+# Virtual Environment
+.venv/
+venv/
+ENV/
+env/
+
+# Playwright
+playwright/.cache/
+playwright-report/
+test-results/
+blob-report/
+
+# Allure
+allure-results/
+allure-report/
+
+# Reportes HTML
+reportes/
+*.html
+
+# Evidencias
+evidencias/
+screenshots/
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# IDE
+.idea/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node (si usas)
+node_modules/

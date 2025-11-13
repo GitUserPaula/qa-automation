@@ -1,0 +1,6 @@
+username,status,detalle
+tomsmith,VÁLIDO,
+tomsmith,VÁLIDO,
+invalid_user,INVÁLIDO,solo letras y números
+ab,INVÁLIDO,muy corto (mínimo 5 caracteres)
+user#,INVÁLIDO,solo letras y números
