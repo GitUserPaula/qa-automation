@@ -5,6 +5,7 @@ This project demonstrates a robust automation framework focusing on E2E testing 
 
 ## 🛠️ Tech Stack
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![Pytest](https://img.shields.io/badge/pytest-%23ffffff.svg?style=for-the-badge&logo=pytest&logoColor=white&color=0A9EDC)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=Playwright&logoColor=white)
 
 ## 🚀 Key Features
