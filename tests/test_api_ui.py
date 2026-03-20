@@ -1,17 +1,17 @@
 # tests/test_api_ui.py
 import pytest
-import responses
+#import responses
 import csv
 import os
 from api.client import APIClient
-from pages.login_page import LoginPage  # ← Asegúrate de tener este archivo
+from pages.login_page import LoginPage  
 
 @pytest.fixture
 def api_client():
     return APIClient()
 
 @pytest.fixture
-def login_page_instance(browser):  # ← RENOMBRADO
+def login_page_instance(browser):  
     page = browser.new_page()
     login_page = LoginPage(page)
     login_page.navigate()
