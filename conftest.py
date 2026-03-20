@@ -23,3 +23,6 @@ def login_page(browser):
     login.navigate()
     yield login
     page.close()
+
+def pytest_html_report_title(main_title):
+    main_title.set_name("QA Automation Execution Report - Playwright")
