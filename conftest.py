@@ -27,6 +27,6 @@ def login_page(browser):
 def pytest_html_report_title(report):
     report.title = "QA Automation Execution Report - Playwright"
 
-def pytest_configure(config):
-    config._metadata['Project Name'] = 'SauceDemo Automation'
-    config._metadata['Tester'] = 'Paula'
+def pytest_html_results_summary(prefix, summary, postfix):
+    prefix.extend([f"<p>Project: SauceDemo Automation</p>"])
+    prefix.extend([f"<p>Tester: Paula (Senior QA)</p>"])
