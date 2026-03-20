@@ -24,9 +24,17 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest-playwright allure-pytest pytest-html
-        
+
     - name: Install Playwright Browsers
       run: playwright install --with-deps
 
     - name: Run Pytest
       run: pytest
+
+    - name: Upload HTML Report
+      if: always() # Ensure this runs even if tests fail
+      uses: actions/upload-artifact@v4
+      with:
+        name: execution-report
+        path: reportes/*.html
+        retention-days: 7

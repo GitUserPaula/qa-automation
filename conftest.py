@@ -24,5 +24,9 @@ def login_page(browser):
     yield login
     page.close()
 
-def pytest_html_report_title(main_title):
-    main_title.set_name("QA Automation Execution Report - Playwright")
+def pytest_html_report_title(report):
+    report.title = "QA Automation Execution Report - Playwright"
+
+def pytest_configure(config):
+    config._metadata['Project Name'] = 'SauceDemo Automation'
+    config._metadata['Tester'] = 'Paula'
