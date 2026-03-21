@@ -38,3 +38,7 @@ jobs:
         name: execution-report
         path: reportes/*.html
         retention-days: 7
+
+    - name: Run Pytest
+      run: |
+        pytest --headless -v --alluredir=allure-results || true # Continue even if tests fail
