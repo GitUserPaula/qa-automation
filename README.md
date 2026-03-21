@@ -1,4 +1,3 @@
-# qa-automation
 # 🐍 Python Automation Suite with Pytest
 
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
@@ -27,31 +26,41 @@ This repository showcases a professional automation framework built with **Pytho
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/GitUserPaula/qa-automation.git](https://github.com/GitUserPaula/qa-automation.git)
-   cd qa-automation
+   cd qa-automation```
+
 2. **Create a virtual environment (Recommended):**
+```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
+```
+
 3. **Install dependencies:**
+```bash
 pip install -r requirements.txt
+```
 
 ## 🧪 Running Tests
 Execute all tests:
+```bash
 pytest
+```
 Run specific test files:
+```bash
 pytest tests/test_example.py
+```
 
 ## 🤖 CI/CD Workflow
 The project includes a GitHub Action workflow that automatically triggers on push to the main branch.
 
 It performs the following steps:
 
-Environment Setup: Configures Python 3.x runner.
+- **Environment Setup:** Configures Python 3.x runner.
 
-Dependency Management: Installs all required packages from requirements.txt.
+- **Dependency Management:** Installs all required packages from requirements.txt.
 
-Automated Testing: Executes the full test suite using Pytest.
+- **Automated Testing:** Executes the full test suite using Pytest.
 
-Status Reporting: Provides immediate feedback on build stability directly within GitHub.
+- **Status Reporting:** Provides immediate feedback on build stability directly within GitHub.
 
 ## 📊 Reporting & Analytics
 The suite generates a detailed **HTML Report** after each execution, including:
@@ -59,6 +68,7 @@ The suite generates a detailed **HTML Report** after each execution, including:
 - **Detailed Logs:** Step-by-step breakdown of every test scenario.
 - **Data-Driven Insights:** Clear visualization of parametrized test cases (e.g., multiple login credentials).
 
-To generate the report locally:
+**To generate the report locally:**
 ```bash
 pytest --html=reportes/report.html --self-contained-html
+```
