@@ -1,6 +1,6 @@
 # tests/test_api_ui.py
 import pytest
-#import responses
+import responses
 import csv
 import os
 from api.client import APIClient

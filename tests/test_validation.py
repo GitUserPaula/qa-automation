@@ -3,6 +3,8 @@
 import sys
 import os
 
+from pytest_playwright.pytest_playwright import page
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import pytest
@@ -15,19 +17,17 @@ def setup_data():
     """Fixture: Genera reporte.html y screenshot"""
     file_path = os.path.join("data", "test_data.csv")
     
-    # Paso 1: Validar
     valid, invalid, invalid_details = process_with_validation(file_path)
-    
-    # Paso 2: Generar reportes
+   
     csv_output = "reporte.csv"
     html_output = "reporte.html"
     write_csv_report(valid, invalid, invalid_details, csv_output)
     write_html_report(valid, invalid, invalid_details, html_output)
     
-    # Paso 3: Screenshot
-    import asyncio
-    generate_screenshot()
-    
+    def test_validation_has_data(page):
+        page.screenshot(path="reportes/screenshot_error.png")
+
+
     return valid, invalid, invalid_details
 
 def test_validation_has_data(setup_data):
