@@ -1,33 +1,20 @@
-# tests/test_validation.py
-
-import sys
 import os
-
-from pytest_playwright.pytest_playwright import page
-
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-
 import pytest
+
+
 from day3_CSV_practice import process_with_validation
 from day4_CSV_practice import write_csv_report, write_html_report
-from day5_CSV_practice import generate_screenshot
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def setup_data():
-    """Fixture: Genera reporte.html y screenshot"""
+    """Fixture: Procesa los datos y genera los reportes base."""
     file_path = os.path.join("data", "test_data.csv")
     
     valid, invalid, invalid_details = process_with_validation(file_path)
-   
-    csv_output = "reporte.csv"
-    html_output = "reporte.html"
-    write_csv_report(valid, invalid, invalid_details, csv_output)
-    write_html_report(valid, invalid, invalid_details, html_output)
     
-    def test_validation_has_data(page):
-        page.screenshot(path="reportes/screenshot_error.png")
-
-
+    write_csv_report(valid, invalid, invalid_details, "reporte.csv")
+    write_html_report(valid, invalid, invalid_details, "reporte.html")
+    
     return valid, invalid, invalid_details
 
 def test_validation_has_data(setup_data):
@@ -46,6 +33,15 @@ def test_html_generated():
 def test_csv_generated():
     assert os.path.exists("reporte.csv"), "reporte.csv no fue generado"
 
-def test_screenshot_generated():
-    screenshots = [f for f in os.listdir("evidencias") if f.startswith("evidencia_")]
-    assert len(screenshots) > 0, "No se generó screenshot"
+def test_screenshot_generated(page):
+    folder = "evidencias"
+    os.makedirs(folder, exist_ok=True)
+    filename = os.path.join(folder, "evidencia_validacion.png")
+
+    page.goto("https://the-internet.herokuapp.com/")
+    page.screenshot(path=filename)
+    
+    assert os.path.exists(filename), f"No se encontró el archivo {filename}"
+     
+    screenshots = [f for f in os.listdir(folder) if f.startswith("evidencia_")]
+    assert len(screenshots) > 0, "No se detectó el archivo en la carpeta evidencias"

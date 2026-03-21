@@ -43,3 +43,13 @@ jobs:
     - name: Run Pytest
       run: |
         pytest --headless -v --alluredir=allure-results || true # Continue even if tests fail
+
+    - name: Archive production artifacts
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: reporte-y-evidencias
+        path: |
+          reporte.html
+          reporte.csv
+          evidencias/
