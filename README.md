@@ -25,8 +25,7 @@ This repository showcases a professional automation framework built with **Pytho
 
 1. **Clone the repository:**
    ```bash
-   git clone [https://github.com/GitUserPaula/qa-automation.git](https://github.com/GitUserPaula/qa-automation.git)
-   cd qa-automation```
+   git clone```
 
 2. **Create a virtual environment (Recommended):**
 ```bash
@@ -42,7 +41,7 @@ pip install -r requirements.txt
 ## 🧪 Running Tests
 Execute all tests:
 ```bash
-pytest
+pytest -v
 ```
 Run specific test files:
 ```bash
