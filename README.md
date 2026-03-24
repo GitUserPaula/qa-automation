@@ -25,7 +25,7 @@ This repository showcases a professional automation framework built with **Pytho
 
 1. **Clone the repository:**
    ```bash
-   git clone```
+   git clone ```
 
 2. **Create a virtual environment (Recommended):**
 ```bash
